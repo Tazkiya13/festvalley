@@ -1,0 +1,20 @@
+services:
+  festvalley-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: festvalley-app
+    container_name: festvalley-container
+    ports:
+      - "9901:80"
+      # WebSocket runs internally - no need to expose it
+    volumes:
+      - ./database/database.sqlite:/var/www/html/database/database.sqlite
+      - ./storage:/var/www/html/storage
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

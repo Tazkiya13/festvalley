@@ -1,0 +1,489 @@
+<!-- Dashboard Layout -->
+<div class="dashboard-container">
+    <!-- Dashboard Sidebar -->
+    <div class="dashboard-sidebar">
+        <div class="sidebar-header">
+            <h5>Dashboard</h5>
+        </div>
+        
+        <div class="sidebar-nav">
+            <div class="nav-section">
+                <h6>Overview</h6>
+                <ul class="nav-list">
+                    <li class="nav-item active">
+                        <a href="#dashboard-overview" class="nav-link">
+                            <i class="material-icons">dashboard</i>
+                            <span>Overview</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#bookings" class="nav-link">
+                            <i class="material-icons">event</i>
+                            <span>My Bookings</span>
+                            <span class="badge bg-primary">3</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-section">
+                <h6>Account</h6>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#profile" class="nav-link">
+                            <i class="material-icons">person</i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#favorites" class="nav-link">
+                            <i class="material-icons">favorite</i>
+                            <span>Favorites</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#messages" class="nav-link">
+                            <i class="material-icons">message</i>
+                            <span>Messages</span>
+                            <span class="badge bg-danger">2</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-section">
+                <h6>Settings</h6>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#settings" class="nav-link">
+                            <i class="material-icons">settings</i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#billing" class="nav-link">
+                            <i class="material-icons">payment</i>
+                            <span>Billing</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Dashboard Content -->
+    <div class="dashboard-content">
+        <!-- Dashboard Overview -->
+        <div class="dashboard-section active" id="dashboard-overview">
+            <div class="section-header">
+                <h3>Welcome back, John!</h3>
+                <p class="text-muted">Here's what's happening with your bookings</p>
+            </div>
+            
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="material-icons">event</i>
+                    </div>
+                    <div class="stat-content">
+                        <h4>3</h4>
+                        <p>Active Bookings</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="material-icons">check_circle</i>
+                    </div>
+                    <div class="stat-content">
+                        <h4>12</h4>
+                        <p>Completed Events</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="material-icons">favorite</i>
+                    </div>
+                    <div class="stat-content">
+                        <h4>8</h4>
+                        <p>Favorite Artists</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="material-icons">euro_symbol</i>
+                    </div>
+                    <div class="stat-content">
+                        <h4>€2,450</h4>
+                        <p>Total Spent</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Activity -->
+            <div class="dashboard-widget">
+                <div class="widget-header">
+                    <h5>Recent Activity</h5>
+                    <a href="#" class="view-all-link">View All</a>
+                </div>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="material-icons text-success">check_circle</i>
+                        </div>
+                        <div class="activity-content">
+                            <p><strong>Booking Confirmed</strong> - The Acoustic Duo</p>
+                            <small class="text-muted">Wedding ceremony on June 15, 2024</small>
+                        </div>
+                        <div class="activity-time">
+                            <small class="text-muted">2 hours ago</small>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="material-icons text-warning">schedule</i>
+                        </div>
+                        <div class="activity-content">
+                            <p><strong>Payment Pending</strong> - Jazz Quartet</p>
+                            <small class="text-muted">Corporate event booking requires payment</small>
+                        </div>
+                        <div class="activity-time">
+                            <small class="text-muted">1 day ago</small>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="material-icons text-info">message</i>
+                        </div>
+                        <div class="activity-content">
+                            <p><strong>New Message</strong> - Solo Guitarist</p>
+                            <small class="text-muted">Artist sent you a message about song requests</small>
+                        </div>
+                        <div class="activity-time">
+                            <small class="text-muted">2 days ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Upcoming Events -->
+            <div class="dashboard-widget">
+                <div class="widget-header">
+                    <h5>Upcoming Events</h5>
+                    <a href="#bookings" class="view-all-link">View All Bookings</a>
+                </div>
+                <div class="events-calendar-widget">
+                    <div class="event-card">
+                        <div class="event-date">
+                            <div class="date-day">15</div>
+                            <div class="date-month">Jun</div>
+                        </div>
+                        <div class="event-details">
+                            <h6>Wedding Ceremony</h6>
+                            <p class="text-muted">The Acoustic Duo</p>
+                            <p class="event-location">
+                                <i class="material-icons">location_on</i>
+                                Amsterdam Wedding Venue
+                            </p>
+                        </div>
+                        <div class="event-status">
+                            <span class="badge bg-success">Confirmed</span>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">
+                            <div class="date-day">22</div>
+                            <div class="date-month">Jun</div>
+                        </div>
+                        <div class="event-details">
+                            <h6>Corporate Event</h6>
+                            <p class="text-muted">Jazz Quartet</p>
+                            <p class="event-location">
+                                <i class="material-icons">location_on</i>
+                                Business Center Rotterdam
+                            </p>
+                        </div>
+                        <div class="event-status">
+                            <span class="badge bg-warning">Payment Required</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- My Bookings Section -->
+        <div class="dashboard-section" id="bookings">
+            <div class="section-header">
+                <h3>My Bookings</h3>
+                <button class="btn btn-primary" onclick="startNewBooking()">
+                    <i class="material-icons me-2">add</i>New Booking
+                </button>
+            </div>
+            
+            <!-- Booking Filters -->
+            <div class="booking-filters">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    <button class="filter-tab" data-filter="pending">Pending</button>
+                    <button class="filter-tab" data-filter="confirmed">Confirmed</button>
+                    <button class="filter-tab" data-filter="completed">Completed</button>
+                    <button class="filter-tab" data-filter="cancelled">Cancelled</button>
+                </div>
+                
+                <div class="filter-search">
+                    <input type="text" class="form-control" placeholder="Search bookings...">
+                </div>
+            </div>
+            
+            <!-- Bookings List -->
+            <div class="bookings-list">
+                <div class="booking-card">
+                    <div class="booking-header">
+                        <div class="booking-title">
+                            <h5>Wedding Ceremony</h5>
+                            <p class="text-muted">Booking #FV-2024-001234</p>
+                        </div>
+                        <div class="booking-status">
+                            <span class="badge bg-success">Confirmed</span>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-details">
+                        <div class="detail-item">
+                            <i class="material-icons">person</i>
+                            <span>The Acoustic Duo</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="material-icons">event</i>
+                            <span>June 15, 2024 at 2:00 PM</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="material-icons">location_on</i>
+                            <span>Amsterdam Wedding Venue</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="material-icons">euro_symbol</i>
+                            <span>€750.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-actions">
+                        <button class="btn btn-outline-primary btn-sm">
+                            <i class="material-icons me-1">visibility</i>View Details
+                        </button>
+                        <button class="btn btn-outline-secondary btn-sm">
+                            <i class="material-icons me-1">message</i>Message Artist
+                        </button>
+                        <button class="btn btn-outline-info btn-sm">
+                            <i class="material-icons me-1">download</i>Invoice
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="booking-card">
+                    <div class="booking-header">
+                        <div class="booking-title">
+                            <h5>Corporate Event</h5>
+                            <p class="text-muted">Booking #FV-2024-001235</p>
+                        </div>
+                        <div class="booking-status">
+                            <span class="badge bg-warning">Payment Required</span>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-details">
+                        <div class="detail-item">
+                            <i class="material-icons">person</i>
+                            <span>Jazz Quartet</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="material-icons">event</i>
+                            <span>June 22, 2024 at 6:00 PM</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="material-icons">location_on</i>
+                            <span>Business Center Rotterdam</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="material-icons">euro_symbol</i>
+                            <span>€1,200.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-actions">
+                        <button class="btn btn-primary btn-sm">
+                            <i class="material-icons me-1">payment</i>Make Payment
+                        </button>
+                        <button class="btn btn-outline-secondary btn-sm">
+                            <i class="material-icons me-1">message</i>Message Artist
+                        </button>
+                        <button class="btn btn-outline-danger btn-sm">
+                            <i class="material-icons me-1">cancel</i>Cancel
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="booking-card">
+                    <div class="booking-header">
+                        <div class="booking-title">
+                            <h5>Birthday Party</h5>
+                            <p class="text-muted">Booking #FV-2024-001236</p>
+                        </div>
+                        <div class="booking-status">
+                            <span class="badge bg-secondary">Completed</span>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-details">
+                        <div class="detail-item">
+                            <i class="material-icons">person</i>
+                            <span>Solo Guitarist</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="material-icons">event</i>
+                            <span>May 10, 2024 at 7:00 PM</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="material-icons">location_on</i>
+                            <span>Private Residence, Utrecht</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="material-icons">euro_symbol</i>
+                            <span>€450.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-actions">
+                        <button class="btn btn-outline-warning btn-sm">
+                            <i class="material-icons me-1">star</i>Leave Review
+                        </button>
+                        <button class="btn btn-outline-primary btn-sm">
+                            <i class="material-icons me-1">refresh</i>Book Again
+                        </button>
+                        <button class="btn btn-outline-info btn-sm">
+                            <i class="material-icons me-1">download</i>Invoice
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Profile Section -->
+        <div class="dashboard-section" id="profile">
+            <div class="section-header">
+                <h3>Profile Settings</h3>
+                <p class="text-muted">Manage your account information</p>
+            </div>
+            
+            <div class="profile-form">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-section">
+                            <h5>Personal Information</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-field-group">
+                                        <label>First Name</label>
+                                        <input type="text" class="form-control" value="John">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-field-group">
+                                        <label>Last Name</label>
+                                        <input type="text" class="form-control" value="Doe">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-field-group">
+                                <label>Email Address</label>
+                                <input type="email" class="form-control" value="john.doe@example.com">
+                            </div>
+                            
+                            <div class="form-field-group">
+                                <label>Phone Number</label>
+                                <input type="tel" class="form-control" value="+31 6 12345678">
+                            </div>
+                            
+                            <div class="form-field-group">
+                                <label>Location</label>
+                                <input type="text" class="form-control" value="Amsterdam, Netherlands">
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h5>Preferences</h5>
+                            <div class="form-field-group">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="email-notifications" checked>
+                                    <label class="form-check-label" for="email-notifications">
+                                        Email notifications for booking updates
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-field-group">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="marketing-emails" checked>
+                                    <label class="form-check-label" for="marketing-emails">
+                                        Marketing emails about new artists and offers
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-field-group">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="sms-notifications">
+                                    <label class="form-check-label" for="sms-notifications">
+                                        SMS notifications for urgent updates
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button class="btn btn-primary">Save Changes</button>
+                            <button class="btn btn-outline-secondary">Cancel</button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="profile-avatar-section">
+                            <h5>Profile Picture</h5>
+                            <div class="avatar-upload">
+                                <div class="current-avatar">
+                                    <img src="https://via.placeholder.com/150x150" alt="Profile" class="img-fluid rounded-circle">
+                                </div>
+                                <button class="btn btn-outline-primary btn-sm mt-2">
+                                    <i class="material-icons me-1">photo_camera</i>Change Photo
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="account-stats mt-4">
+                            <h6>Account Statistics</h6>
+                            <div class="stat-item">
+                                <span>Member since:</span>
+                                <span>January 2023</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Total bookings:</span>
+                                <span>15</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Reviews given:</span>
+                                <span>12</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

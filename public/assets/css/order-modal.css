@@ -1,0 +1,51 @@
+   /* CSS khusus untuk modal detail order */
+        /* Force modal detail order to work on all screen sizes */
+        #detailModal {
+            z-index: 9999 !important;
+        }
+
+        #detailModal .modal-backdrop {
+            display: none !important; /* Hilangkan backdrop */
+        }
+
+        #detailModal .modal-dialog {
+            z-index: 10000 !important;
+            pointer-events: auto !important;
+            margin: 1.75rem auto !important;
+        }
+
+        #detailModal .modal-content {
+            z-index: 10001 !important;
+            pointer-events: auto !important;
+            position: relative !important;
+            background: white !important;
+            border: 1px solid #dee2e6 !important;
+            border-radius: 10px !important;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        /* Mobile specific */
+        @media (max-width: 991px) {
+            #detailModal {
+                z-index: 9999 !important;
+            }
+
+            #detailModal .modal-dialog {
+                margin: 1rem !important;
+                max-width: calc(100% - 2rem) !important;
+                z-index: 10000 !important;
+            }
+
+            #detailModal .modal-content {
+                z-index: 10001 !important;
+            }
+
+            /* Hilangkan semua backdrop */
+            .modal-backdrop,
+            .modal-backdrop.fade,
+            .modal-backdrop.show {
+                display: none !important;
+                opacity: 0 !important;
+                visibility: hidden !important;
+            }
+        }

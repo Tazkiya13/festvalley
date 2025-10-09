@@ -1,0 +1,208 @@
+/* Chat Widget Styles - Purple & Pink Theme */
+
+/* Chat Window and Base Elements */
+.chat-window {
+    background: linear-gradient(135deg, #9c27b0 0%, #ff4081 100%) !important;
+    width: 332px;
+    height: 360px;
+    border-radius: 10px;
+    z-index: 9999;
+    position: fixed;
+    bottom: 120px;
+    right: 54px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Expanded chat window */
+.chat-window2 {
+    background: linear-gradient(135deg, #9c27b0 0%, #ff4081 100%) !important;
+    width: 332px;
+    height: auto;
+    border-radius: 10px;
+    z-index: 9999;
+    position: fixed;
+    bottom: 120px;
+    right: 54px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Chat Header */
+.chat-header.primary {
+    background: linear-gradient(135deg, #6a1b9a 0%, #ec407a 100%) !important;
+    color: white;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+}
+
+.chat-header p, .box-header h3 {
+    color: white !important;
+    margin: 5px 0;
+}
+
+.chat-header .p1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.chat-header .p2 {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Chat header layout with close button */
+.chat-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Close button in chat header */
+.chat-close-btn button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.chat-close-btn button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.chat-close-btn i.fa-times {
+    color: white !important;
+}
+
+/* Chat Body */
+.row-row.dker {
+    background: linear-gradient(135deg, #f3e5f5 0%, #fce4ec 100%) !important;
+}
+
+.box-header.dker.primary {
+    background: linear-gradient(135deg, #6a1b9a 0%, #ec407a 100%) !important;
+}
+
+/* Primary Color Override */
+.primary {
+    background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%) !important;
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%) !important;
+    border: none;
+}
+
+/* Bottom Bar */
+.b-t.b-t-primary {
+    background: linear-gradient(135deg, #f3e5f5 0%, #fce4ec 100%) !important;
+    border-color: #9c27b0 !important;
+}
+
+/* Start Conversation Section */
+.start-conversation {
+    background: linear-gradient(135deg, #f3e5f5 0%, #fce4ec 100%) !important;
+    color: #6a1b9a;
+    padding: 20px;
+}
+
+.start-conversation h1 {
+    color: #6a1b9a !important;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Chat Messages */
+.purple-pink-gradient {
+    background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%) !important;
+    color: white !important;
+}
+
+/* Make sure info class messages use our new gradient */
+.info {
+    background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%) !important;
+    color: white !important;
+}
+
+/* Chat Button Styles */
+.chat-bar-open button,
+.chat-bar-close button {
+    background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%) !important;
+    box-shadow: 0 4px 20px rgba(156, 39, 176, 0.4);
+}
+
+.chat-bar-open button:hover,
+.chat-bar-close button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(156, 39, 176, 0.5);
+}
+
+/* Input Area */
+#message-user::placeholder {
+    color: #9c27b0;
+}
+
+#send-button i {
+    color: #9c27b0 !important;
+}
+
+/* Fixing X button visibility */
+#clear-chat-button i.fa-times {
+    color: white !important;
+    font-size: 20px !important;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    background-color: #e91e63;
+    border-radius: 50%;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Close chat button in header */
+.chat-bar-close button svg {
+    fill: white !important;
+    stroke: white !important;
+}
+
+/* Fix z-index and positioning for the floating close button */
+.chat-bar-close {
+    position: fixed !important;
+    bottom: 70px !important;
+    right: 54px !important;
+    z-index: 10000000 !important; /* Higher than the chat window to ensure visibility */
+    pointer-events: auto !important;
+}
+
+/* Ensure close button is hidden by default */
+.chat-bar-close.d-none {
+    display: none !important;
+}
+
+/* Chat window positioning adjustment to prevent overlap */
+.chat-window {
+    z-index: 9999999;
+}
+
+/* Fix z-index for chat box when expanded */
+#chat-box {
+    position: relative;
+    z-index: 9999; /* Lower than the close button */
+}
+
+/* Ensure the floating close button is always on top */
+#close-chat button {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}

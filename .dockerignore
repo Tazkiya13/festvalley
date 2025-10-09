@@ -1,0 +1,40 @@
+# Docker ignore file for Laravel application
+.git
+.gitignore
+README.md
+Dockerfile*
+docker-compose*
+.dockerignore
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.DS_Store
+Thumbs.db
+
+# Don't copy node_modules (we'll install in container)
+node_modules/
+
+# Don't copy vendor (we'll install in container)
+vendor/
+
+# Don't copy compiled assets (we'll build in container)
+public/build/
+public/hot
+
+# Don't copy logs and cache
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+bootstrap/cache/*
+
+# Keep important directories structure
+!storage/logs/.gitkeep
+!storage/framework/cache/.gitkeep
+!storage/framework/sessions/.gitkeep
+!storage/framework/views/.gitkeep
+!bootstrap/cache/.gitkeep

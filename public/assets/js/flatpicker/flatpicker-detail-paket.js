@@ -1,0 +1,74 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Inisialisasi untuk semua input flatpickr-detail-package
+    document.querySelectorAll('.flatpickr-detail-package').forEach(function(input) {
+        var packageId = input.dataset.packageId;
+        var availableDates = JSON.parse(input.dataset.availableDates || '[]');
+        var availableIds = JSON.parse(input.dataset.availableIds || '[]');
+        var hidden = document.getElementById('date_id_input');
+        if (!hidden) return;
+
+        function initFlatpickrDetail() {
+            // Inisialisasi flatpickr jika belum
+            if (typeof flatpickr !== 'undefined') {
+                flatpickr(input, {
+                dateFormat: "Y-m-d",
+                altInput: true,
+                altFormat: "F j, Y",
+                showMonths: 2,
+                minDate: "today",
+                enable: availableDates,
+                disableMobile: true,
+                onChange: function(selectedDates, dateStr) {
+                        var idx = availableDates.indexOf(dateStr);
+                        if (idx !== -1) {
+                            hidden.value = availableIds[idx];
+                        } else {
+                            hidden.value = '';
+                        }
+                    },
+                onOpen: function(selectedDates, dateStr, instance) {
+                    if (window.renderLiburBulan) setTimeout(() => window.renderLiburBulan(instance), 10);
+                },
+                onMonthChange: function(selectedDates, dateStr, instance) {
+                    if (window.renderLiburBulan) window.renderLiburBulan(instance);
+                },
+                onDayCreate: function(dObj, dStr, fp, dayElem) {
+                    if (!dayElem.dateObj) return;
+                    const date = dayElem.dateObj;
+                    const ymd  = [
+                        date.getFullYear(),
+                        window.pad(date.getMonth() + 1),
+                        window.pad(date.getDate())
+                    ].join('-');
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0);
+                    if (date >= today && availableDates.includes(ymd)) {
+                        if ((window.liburMap && window.liburMap[ymd]) || date.getDay() === 0) {
+                            dayElem.style.color = '#d00';
+                        }
+                    }
+                }
+                });
+            }
+        }
+
+        if (window.liburMap) {
+            initFlatpickrDetail();
+        } else {
+            window.addEventListener('liburReady', function() {
+                initFlatpickrDetail();
+            }, { once: true });
+        }
+
+        // Event handler jika user mengetik manual (fallback)
+        input.addEventListener('change', function() {
+            var val = input.value;
+            var idx = availableDates.indexOf(val);
+            if (idx !== -1) {
+                hidden.value = availableIds[idx];
+            } else {
+                hidden.value = '';
+            }
+        });
+    });
+});

@@ -1,0 +1,189 @@
+<!--
+=================================================================
+DOKUMENTASI PENGGUNAAN RESPONSIVE TABLE CSS
+=================================================================
+
+File CSS: public/assets/css/responsif-tabel.css
+Sudah diinclude di: resources/views/head.blade.php
+
+=================================================================
+TEMPLATE DASAR UNTUK SEMUA HALAMAN TABEL
+=================================================================
+-->
+
+<!-- STRUKTUR HTML UNTUK DESKTOP TABLE -->
+<div class="responsive-table-container">
+    <table class="table table-striped table-hover table-bordered responsive-table">
+        <thead>
+            <tr>
+                <th>Kolom 1</th>
+                <th>Kolom 2</th>
+                <th>Kolom 3</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Data 1</td>
+                <td>Data 2</td>
+                <td>Data 3</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Edit</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- STRUKTUR HTML UNTUK MOBILE CARDS -->
+<div class="mobile-cards">
+    <div class="mobile-card">
+        <div class="mobile-card-header">
+            <h6><i class="fas fa-box"></i> Item #1</h6>
+            <span class="badge bg-light text-dark">#1</span>
+        </div>
+
+        <div class="mobile-card-body">
+            <!-- Data Row -->
+            <div class="mobile-card-row">
+                <div class="mobile-card-label">Label 1:</div>
+                <div class="mobile-card-value">Value 1</div>
+            </div>
+
+            <div class="mobile-card-row">
+                <div class="mobile-card-label">Label 2:</div>
+                <div class="mobile-card-value">Value 2</div>
+            </div>
+
+            <!-- Status Badge -->
+            <div class="mobile-card-row">
+                <div class="mobile-card-label">Status:</div>
+                <div class="mobile-card-value">
+                    <span class="mobile-status-badge status-approved">Approved</span>
+                </div>
+            </div>
+
+            <!-- Image -->
+            <div class="mobile-card-row">
+                <div class="mobile-card-label">Image:</div>
+                <div class="mobile-card-value">
+                    <img src="image.jpg" alt="Image" class="mobile-card-image">
+                </div>
+            </div>
+
+            <!-- Price -->
+            <div class="mobile-card-row">
+                <div class="mobile-card-label">Harga:</div>
+                <div class="mobile-card-value">
+                    <span class="mobile-price-badge">€25.00</span>
+                </div>
+            </div>
+
+            <!-- Date Input -->
+            <div class="mobile-card-row">
+                <div class="mobile-card-label">Tanggal:</div>
+                <div class="mobile-card-value">
+                    <input type="text" class="mobile-date-input flatpickr" placeholder="Pilih tanggal">
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="mobile-card-actions">
+                <button class="btn btn-warning btn-sm">
+                    <i class="fas fa-edit"></i> Edit
+                </button>
+                <button class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash"></i> Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+=================================================================
+STATUS BADGE CLASSES YANG TERSEDIA
+=================================================================
+
+Desktop (dalam <td>):
+- .badge-status.badge-waiting
+- .badge-status.badge-approved
+- .badge-status.badge-rejected
+- .badge-status.badge-paid
+- .badge-status.badge-unpaid
+
+Mobile (dalam .mobile-card-value):
+- .mobile-status-badge.status-waiting
+- .mobile-status-badge.status-approved
+- .mobile-status-badge.status-rejected
+- .mobile-status-badge.status-paid
+- .mobile-status-badge.status-unpaid
+
+=================================================================
+UTILITY CLASSES
+=================================================================
+
+Image:
+- .table-image (untuk desktop table)
+- .mobile-card-image (untuk mobile card)
+
+Text:
+- .text-truncate-mobile (otomatis responsive)
+
+Empty State:
+- .empty-state (container)
+- .empty-state i (icon)
+- .empty-state h5 (title)
+- .empty-state p (description)
+
+=================================================================
+CONTOH IMPLEMENTASI UNTUK BERBAGAI HALAMAN
+=================================================================
+-->
+
+<!-- 1. ARTISTS INDEX -->
+<!-- Desktop table dengan: No, Tanggal Tersedia, Nama package, Aksi -->
+<!-- Mobile card dengan: Header (Nama package + No), Body (Tanggal input), Actions -->
+
+<!-- 2. BOOKING INDEX -->
+<!-- Desktop table dengan: No, Nama Artis, Nama package, Status, Tanggal, Aksi -->
+<!-- Mobile card dengan: Header (package + Status), Body (Artis, Tanggal, Form update), Actions -->
+
+<!-- 3. ORDER INDEX -->
+<!-- Desktop table dengan: No, Invoice Number, Image, Tanggal, Status, Harga, Aksi -->
+<!-- Mobile card dengan: Header (Invoice + Status), Body (Image, Tanggal, Harga), Actions -->
+
+<!-- 4. INVOICE LIST -->
+<!-- Desktop table dengan: No, Invoice, Image, Status, Total, Tanggal, Nama package, Artis, Aksi -->
+<!-- Mobile card dengan: Header (Invoice + Status), Body (Image, Total, Tanggal, package, Artis), Actions -->
+
+<!--
+=================================================================
+CARA CONVERT HALAMAN YANG ADA
+=================================================================
+
+1. Include CSS di head.blade.php (SUDAH DILAKUKAN)
+2. Ganti class table container:
+   - Dari: <table class="table ...">
+   - Ke:
+     <div class="responsive-table-container">
+         <table class="table table-striped table-hover table-bordered responsive-table">
+     </div>
+
+3. Tambah mobile cards setelah table:
+   <div class="mobile-cards">
+       <!-- Loop data dan buat card untuk setiap row -->
+   </div>
+
+4. Gunakan class yang sesuai untuk status, Image, dan komponen lainnya
+
+=================================================================
+RESPONSIVE BREAKPOINT
+=================================================================
+
+Desktop: 769px ke atas (table ditampilkan)
+Mobile: 768px ke bawah (card ditampilkan)
+
+CSS menggunakan media queries untuk otomatis hide/show komponen yang sesuai.
+-->
