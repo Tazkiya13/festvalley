@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+    <title>FestValley - Artist Booking Platform</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/festvalley.css">
+    
+    <!-- Custom CSS for specific pages -->
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">
+                <span class="text-primary">Fest</span><span class="text-secondary">Valley</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav me-auto">
+                    <a class="nav-link" href="#home">Home</a>
+                    <a class="nav-link" href="#browse">Browse Artists</a>
+                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="#contact">Contact</a>
+                </div>
+                
+                <div class="navbar-nav ms-auto">
+                    <!-- Authenticated User Menu -->
+                    <div class="dropdown d-none" id="user-menu">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="material-icons align-middle">account_circle</i>
+                            <span id="user-name">User Name</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- Artist Menu Items -->
+                            <li class="artist-menu d-none">
+                                <a class="dropdown-item" href="#profile">
+                                    <i class="material-icons me-2">person</i>Profile
+                                </a>
+                            </li>
+                            <li class="artist-menu d-none">
+                                <a class="dropdown-item" href="#packages">
+                                    <i class="material-icons me-2">inventory</i>My Packages
+                                </a>
+                            </li>
+                            <!-- Customer Menu Items -->
+                            <li class="customer-menu d-none">
+                                <a class="dropdown-item" href="#dashboard">
+                                    <i class="material-icons me-2">dashboard</i>Dashboard
+                                </a>
+                            </li>
+                            <li class="customer-menu d-none">
+                                <a class="dropdown-item" href="#bookings">
+                                    <i class="material-icons me-2">event</i>My Bookings
+                                </a>
+                            </li>
+                            <!-- Admin Menu Items -->
+                            <li class="admin-menu d-none">
+                                <a class="dropdown-item" href="#admin">
+                                    <i class="material-icons me-2">admin_panel_settings</i>Admin Panel
+                                </a>
+                            </li>
+                            <li class="admin-menu d-none">
+                                <a class="dropdown-item" href="#admin-bookings">
+                                    <i class="material-icons me-2">book</i>Manage Bookings
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#logout">
+                                    <i class="material-icons me-2">logout</i>Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Guest Menu -->
+                    <div id="guest-menu">
+                        <a class="nav-link" href="#login">Login</a>
+                        <a class="nav-link" href="#register">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6">
+                        <h1 class="hero-title">Find Perfect Artists for Your Events</h1>
+                        <p class="hero-subtitle">Connect with talented musicians, performers, and entertainers for weddings, corporate events, parties, and more.</p>
+                        <div class="hero-actions">
+                            <a href="#browse" class="btn btn-primary btn-lg me-3">Browse Artists</a>
+                            <a href="#how-it-works" class="btn btn-outline-secondary btn-lg">How It Works</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3" alt="Live Music Performance" class="img-fluid rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section id="search" class="search-section py-5 bg-light">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="search-card">
+                            <h3 class="text-center mb-4">Find Your Perfect Artist</h3>
+                            <form id="searchForm" class="search-form">
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label for="genre" class="form-label">Genre</label>
+                                        <select id="genre" name="genre" class="form-select select2">
+                                            <option value="">All Genres</option>
+                                            <option value="rock">Rock</option>
+                                            <option value="pop">Pop</option>
+                                            <option value="jazz">Jazz</option>
+                                            <option value="classical">Classical</option>
+                                            <option value="acoustic">Acoustic</option>
+                                            <option value="electronic">Electronic</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="location" class="form-label">Location</label>
+                                        <input type="text" id="location" name="location" class="form-control" placeholder="City or Province">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="date" class="form-label">Event Date</label>
+                                        <input type="date" id="date" name="date" class="form-control date-picker">
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn btn-primary btn-lg px-5">
+                                            <i class="material-icons me-2">search</i>Search Artists
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Sections (dynamically loaded) -->
+        <div id="content-sections">
+            <!-- Artist Cards Section -->
+            <section id="artists-grid" class="py-5">
+                <div class="container">
+                    <h2 class="text-center mb-5">Featured Artists</h2>
+                    <div class="row" id="artist-cards">
+                        <!-- Artist cards will be loaded here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <!-- Chat Button -->
+        <div class="chat-bar-open" id="open-chat">
+            <button class="btn btn-primary rounded-circle p-3 shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
+                    <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Chat Window -->
+        <div class="chat-window d-none" id="chat-container">
+            <div class="chat-header">
+                <div class="chat-header-content">
+                    <h5 class="mb-1 text-white">Customer Support</h5>
+                    <p class="mb-0 text-white-50">Ask us anything, share your feedback</p>
+                </div>
+                <button class="btn-close btn-close-white" id="close-chat"></button>
+            </div>
+            
+            <div class="chat-body" id="chat-messages">
+                <!-- Messages will appear here -->
+            </div>
+            
+            <div class="chat-footer">
+                <form id="chat-form" class="d-none">
+                    <div class="input-group">
+                        <input type="text" id="chat-message" class="form-control" placeholder="Type your message...">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="material-icons">send</i>
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="start-conversation" id="start-conversation">
+                    <h6>Start a Conversation</h6>
+                    <form id="chat-init-form">
+                        <div class="mb-3">
+                            <input type="tel" id="customer-phone" class="form-control" placeholder="Phone Number" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" id="customer-name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea id="initial-message" class="form-control" rows="3" placeholder="Your Question..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold">
+                        <span class="text-primary">Fest</span><span class="text-secondary">Valley</span>
+                    </h5>
+                    <p class="text-muted">Connecting talented artists with event organizers across Europe. Find the perfect entertainment for your special events.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Platform</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#browse" class="text-muted text-decoration-none">Browse Artists</a></li>
+                        <li><a href="#how-it-works" class="text-muted text-decoration-none">How It Works</a></li>
+                        <li><a href="#pricing" class="text-muted text-decoration-none">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#help" class="text-muted text-decoration-none">Help Center</a></li>
+                        <li><a href="#contact" class="text-muted text-decoration-none">Contact Us</a></li>
+                        <li><a href="#faq" class="text-muted text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Legal</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#privacy" class="text-muted text-decoration-none">Privacy Policy</a></li>
+                        <li><a href="#terms" class="text-muted text-decoration-none">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Follow Us</h6>
+                    <div class="social-links">
+                        <a href="#" class="text-muted me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-muted me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-muted me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2025 FestValley. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="text-muted mb-0">Made with ❤️ for the music community</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals Container -->
+    <div id="modals-container">
+        <!-- Modals will be dynamically loaded here -->
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay d-none">
+        <div class="loading-spinner">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/festvalley.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/components.js"></script>
+</body>
+</html>

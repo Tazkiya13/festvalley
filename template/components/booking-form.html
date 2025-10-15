@@ -1,0 +1,329 @@
+<!-- Booking Form Modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Book Artist</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div id="booking-form-container">
+                    <!-- Booking form will be inserted here by booking.js -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Package Selection Modal -->
+<div class="modal fade" id="packageSelectionModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Select Package</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="package-selection">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="package-option" data-package="ceremony">
+                                <div class="package-header">
+                                    <h5>Ceremony Package</h5>
+                                    <div class="package-price">€450</div>
+                                </div>
+                                <div class="package-features">
+                                    <ul>
+                                        <li>1.5 hours performance</li>
+                                        <li>Processional music</li>
+                                        <li>Sound equipment</li>
+                                        <li>Song requests</li>
+                                    </ul>
+                                </div>
+                                <button class="btn btn-outline-primary w-100" onclick="selectPackage('ceremony')">
+                                    Select Package
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="package-option featured" data-package="reception">
+                                <div class="package-badge">Most Popular</div>
+                                <div class="package-header">
+                                    <h5>Reception Package</h5>
+                                    <div class="package-price">€750</div>
+                                </div>
+                                <div class="package-features">
+                                    <ul>
+                                        <li>3 hours performance</li>
+                                        <li>Background & featured music</li>
+                                        <li>Sound equipment</li>
+                                        <li>MC services</li>
+                                        <li>Extensive song list</li>
+                                    </ul>
+                                </div>
+                                <button class="btn btn-primary w-100" onclick="selectPackage('reception')">
+                                    Select Package
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="package-option" data-package="fullday">
+                                <div class="package-header">
+                                    <h5>Full Day Package</h5>
+                                    <div class="package-price">€1,200</div>
+                                </div>
+                                <div class="package-features">
+                                    <ul>
+                                        <li>6+ hours performance</li>
+                                        <li>Ceremony & reception</li>
+                                        <li>Special song learning</li>
+                                        <li>MC services</li>
+                                        <li>Premium equipment</li>
+                                        <li>Setup included</li>
+                                    </ul>
+                                </div>
+                                <button class="btn btn-outline-primary w-100" onclick="selectPackage('fullday')">
+                                    Select Package
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="custom-package mt-4">
+                        <div class="alert alert-info">
+                            <h6><i class="material-icons me-2">info</i>Need something different?</h6>
+                            <p class="mb-2">We can create a custom package tailored to your specific needs.</p>
+                            <button class="btn btn-sm btn-outline-info" onclick="requestCustomPackage()">
+                                Request Custom Package
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Date Picker Component -->
+<div class="date-picker-component">
+    <label for="event-date-picker" class="form-label">Select Event Date</label>
+    <div class="date-picker-wrapper">
+        <input type="text" id="event-date-picker" class="form-control" placeholder="Choose a date" readonly>
+        <div class="date-picker-calendar" id="date-picker-calendar" style="display: none;">
+            <div class="calendar-header">
+                <button type="button" class="btn btn-sm btn-link" id="prev-month">
+                    <i class="material-icons">chevron_left</i>
+                </button>
+                <h6 id="calendar-month-year"></h6>
+                <button type="button" class="btn btn-sm btn-link" id="next-month">
+                    <i class="material-icons">chevron_right</i>
+                </button>
+            </div>
+            <div class="calendar-weekdays">
+                <div class="weekday">Sun</div>
+                <div class="weekday">Mon</div>
+                <div class="weekday">Tue</div>
+                <div class="weekday">Wed</div>
+                <div class="weekday">Thu</div>
+                <div class="weekday">Fri</div>
+                <div class="weekday">Sat</div>
+            </div>
+            <div class="calendar-days" id="calendar-days">
+                <!-- Days will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+    <div class="available-dates-info mt-2">
+        <small class="text-muted">
+            <i class="material-icons" style="font-size: 14px;">info</i>
+            Green dates are available, red dates are booked
+        </small>
+    </div>
+</div>
+
+<!-- File Upload Component -->
+<div class="file-upload-component">
+    <label class="form-label">Upload Event References (Optional)</label>
+    <div class="file-upload-area" onclick="triggerFileInput('event-files')">
+        <input type="file" id="event-files" name="event_files[]" multiple 
+               accept="image/*,video/*,.pdf,.doc,.docx" style="display: none;">
+        <div class="upload-content">
+            <i class="material-icons">cloud_upload</i>
+            <h6>Drag & drop files here</h6>
+            <p class="text-muted">or click to browse</p>
+            <small class="text-muted">Images, videos, documents (max 5 files, 10MB each)</small>
+        </div>
+    </div>
+    <div class="file-preview-container mt-3" id="event-files-preview">
+        <!-- File previews will appear here -->
+    </div>
+</div>
+
+<!-- Payment Information Component -->
+<div class="payment-info-component">
+    <div class="payment-summary">
+        <h6>Payment Summary</h6>
+        <div class="payment-breakdown">
+            <div class="payment-item">
+                <span>Package Price:</span>
+                <span id="package-price">€750.00</span>
+            </div>
+            <div class="payment-item">
+                <span>Service Fee (5%):</span>
+                <span id="service-fee">€37.50</span>
+            </div>
+            <div class="payment-item">
+                <span>VAT (21%):</span>
+                <span id="vat-amount">€165.38</span>
+            </div>
+            <div class="payment-total">
+                <span><strong>Total Amount:</strong></span>
+                <span><strong id="total-amount">€952.88</strong></span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="payment-schedule mt-3">
+        <h6>Payment Schedule</h6>
+        <div class="schedule-item">
+            <div class="schedule-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <strong>Booking Confirmation</strong>
+                    <p class="text-muted">25% deposit required to secure booking</p>
+                    <span class="amount">€238.22</span>
+                </div>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="schedule-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <strong>Before Event</strong>
+                    <p class="text-muted">Remaining balance due 48 hours before event</p>
+                    <span class="amount">€714.66</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="payment-methods mt-3">
+        <h6>Accepted Payment Methods</h6>
+        <div class="payment-method-icons">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-paypal"></i>
+            <i class="fas fa-university"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Booking Timeline Component -->
+<div class="booking-timeline-component">
+    <h6>Booking Process Timeline</h6>
+    <div class="timeline">
+        <div class="timeline-item completed">
+            <div class="timeline-marker">
+                <i class="material-icons">check</i>
+            </div>
+            <div class="timeline-content">
+                <h6>Booking Submitted</h6>
+                <p class="text-muted">Your booking request has been submitted</p>
+                <small class="text-success">Completed</small>
+            </div>
+        </div>
+        
+        <div class="timeline-item active">
+            <div class="timeline-marker">
+                <i class="material-icons">schedule</i>
+            </div>
+            <div class="timeline-content">
+                <h6>Artist Review</h6>
+                <p class="text-muted">Artist is reviewing your booking request</p>
+                <small class="text-warning">In Progress (24-48 hours)</small>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-marker">
+                <i class="material-icons">email</i>
+            </div>
+            <div class="timeline-content">
+                <h6>Confirmation Email</h6>
+                <p class="text-muted">You'll receive email confirmation once approved</p>
+                <small class="text-muted">Pending</small>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-marker">
+                <i class="material-icons">payment</i>
+            </div>
+            <div class="timeline-content">
+                <h6>Payment Processing</h6>
+                <p class="text-muted">Secure payment link will be provided</p>
+                <small class="text-muted">Pending</small>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-marker">
+                <i class="material-icons">event</i>
+            </div>
+            <div class="timeline-content">
+                <h6>Event Day</h6>
+                <p class="text-muted">Enjoy your special event!</p>
+                <small class="text-muted">Upcoming</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Success Message Component -->
+<div class="booking-success-component" style="display: none;">
+    <div class="success-animation">
+        <div class="success-checkmark">
+            <div class="check-icon">
+                <span class="icon-line line-tip"></span>
+                <span class="icon-line line-long"></span>
+                <div class="icon-circle"></div>
+                <div class="icon-fix"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="success-content text-center">
+        <h3>Booking Submitted Successfully!</h3>
+        <p class="lead">Thank you for choosing FestValley</p>
+        <p class="text-muted">
+            Your booking request has been sent to the artist. 
+            You'll receive a confirmation email within 24-48 hours.
+        </p>
+        
+        <div class="booking-reference mt-4">
+            <h6>Booking Reference</h6>
+            <div class="reference-code">#FV-2024-001234</div>
+        </div>
+        
+        <div class="next-steps mt-4">
+            <h6>What's Next?</h6>
+            <ul class="list-unstyled">
+                <li><i class="material-icons text-success me-2">check_circle</i>Check your email for confirmation</li>
+                <li><i class="material-icons text-warning me-2">schedule</i>Artist will review your request</li>
+                <li><i class="material-icons text-info me-2">payment</i>Payment link will be provided once approved</li>
+            </ul>
+        </div>
+        
+        <div class="action-buttons mt-4">
+            <button class="btn btn-primary" onclick="goToDashboard()">
+                <i class="material-icons me-2">dashboard</i>Go to Dashboard
+            </button>
+            <button class="btn btn-outline-secondary ms-2" onclick="browseMoreArtists()">
+                <i class="material-icons me-2">search</i>Browse More Artists
+            </button>
+        </div>
+    </div>
+</div>

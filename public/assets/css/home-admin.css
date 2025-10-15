@@ -1,0 +1,407 @@
+  /* Admin panel specific styles - scoped to avoid landing page conflicts */
+        .admin-panel {
+            /* Prevent horizontal overflow in all modes */
+            overflow-x: hidden !important;
+            max-width: 100vw !important;
+        }
+
+        /* Prevent horizontal scroll completely */
+        .admin-panel html,
+        .admin-panel body {
+            overflow-x: hidden !important;
+            max-width: 100vw !important;
+            box-sizing: border-box !important;
+        }
+
+        .admin-panel .app,
+        .admin-panel .app-content,
+        .admin-panel .app-body,
+        .admin-panel #app,
+        .admin-panel #content {
+            max-width: 100vw !important;
+            overflow-x: hidden !important;
+            box-sizing: border-box !important;
+        }
+
+        @media (max-width: 991px) {
+            /* Content container - OVERRIDE responsif-tabel.css yang menambah 60px padding */
+            .admin-panel #content,
+            .admin-context #content,
+            .admin-panel .app-content,
+            .admin-context .app-content,
+            body.admin-panel #content,
+            body.admin-context #content,
+            body.admin-panel .app-content,
+            body.admin-context .app-content {
+                padding-top: 0 !important; /* FORCE override padding 60px dari responsif-tabel.css */
+                overflow-x: hidden !important;
+                max-width: 100vw !important;
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+                margin-top: 0 !important;
+            }
+
+            /* App-body harus memiliki padding minimal untuk mobile header yang fixed */
+            .admin-panel .app-body,
+            .admin-context .app-body,
+            .admin-panel .mobile-header-responsive + .app-body,
+            .admin-context .mobile-header-responsive + .app-body,
+            .admin-panel .app-content:has(.mobile-header-responsive) .app-body,
+            .admin-context .app-content:has(.mobile-header-responsive) .app-body,
+            body.admin-panel .app-body,
+            body.admin-context .app-body,
+            .app-content .app-body {
+                padding-top: 0 !important; /* Hanya 20px gap dari hamburger ke tabel */
+                margin-top: 0 !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            /* Override main-content padding from responsif-tabel.css */
+            .admin-panel .main-content,
+            .admin-context .main-content {
+                padding: 5px !important;
+                padding-top: 0 !important;
+                margin-top: 0 !important;
+            }
+
+            /* CRITICAL: Override responsif-tabel.css app-body padding yang berlebihan */
+            .admin-panel .app-body,
+            .admin-context .app-body,
+            body.admin-panel .app-body,
+            body.admin-context .app-body {
+                padding-top: 20px !important; /* Override semua aturan dari responsif-tabel.css */
+                margin-top: 0 !important;
+            }
+
+            /* Override specific selectors dari responsif-tabel.css */
+            .mobile-header-responsive + .app-body,
+            .app-content:has(.mobile-header-responsive) .app-body {
+                padding-top: 20px !important; /* Hanya 20px gap dari hamburger */
+            }
+
+            /* Ensure ALL content elements have no extra top spacing */
+            .admin-panel .app-body > *:first-child,
+            .admin-context .app-body > *:first-child,
+            .admin-panel .app-content > *:first-child,
+            .admin-context .app-content > *:first-child,
+            .admin-panel #content > *:first-child,
+            .admin-context #content > *:first-child {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+
+            /* Remove top spacing from common content containers */
+            .admin-panel .container,
+            .admin-context .container,
+            .admin-panel .container-fluid,
+            .admin-context .container-fluid,
+            .admin-panel .row:first-child,
+            .admin-context .row:first-child,
+            .admin-panel .col:first-child,
+            .admin-context .col:first-child {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+
+            /* Override responsive table container margins */
+            .admin-panel .responsive-table-container,
+            .admin-context .responsive-table-container,
+            .admin-panel .mobile-cards,
+            .admin-context .mobile-cards {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+
+            /* Hide navbar on mobile - all variations */
+            .admin-panel .navbar,
+            .admin-context .navbar,
+            .admin-panel .navbar-expand-lg,
+            .admin-context .navbar-expand-lg {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+            }
+
+            /* Show mobile header on mobile */
+            .admin-panel .mobile-header-responsive,
+            .admin-context .mobile-header-responsive {
+                display: block !important;
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                z-index: 1060 !important;
+                background: #ffffff !important;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+                height: 60px !important;
+            }
+
+            /* Mobile hamburger menu specific styling */
+            .mobile-hamburger-btn {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: 40px !important;
+                height: 40px !important;
+                border-radius: 50% !important;
+                background: transparent !important;
+                border: none !important;
+                color: #495057 !important;
+                cursor: pointer !important;
+                transition: all 0.2s ease !important;
+                text-decoration: none !important;
+                margin-right: 10px !important;
+            }
+
+            .mobile-hamburger-btn:hover {
+                background-color: rgba(0,0,0,0.05) !important;
+                color: #495057 !important;
+                text-decoration: none !important;
+            }
+
+            .mobile-hamburger-btn .material-icons {
+                font-size: 22px !important;
+            }
+
+            /* Ensure modal works properly on mobile */
+            #aside {
+                z-index: 1070 !important;
+            }
+
+            #aside.show {
+                display: block !important;
+            }
+
+            /* Prevent body scroll when modal is open */
+            body.modal-open {
+                overflow: hidden !important;
+            }
+
+            /* Profile menu button styling */
+            .profile-menu-btn {
+                display: flex;
+                align-items: center;
+                padding: 8px 12px;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 4px;
+                transition: all 0.2s ease;
+                cursor: pointer;
+            }
+
+            .profile-menu-btn:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: #fff;
+                text-decoration: none;
+            }
+
+            /* Profile menu modal styling */
+            #profile-menu-modal .modal-dialog {
+                margin: 1.75rem auto;
+                max-width: 300px;
+            }
+
+            #profile-menu-modal .modal-content {
+                border-radius: 8px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            }
+
+            #profile-menu-modal .list-group-item {
+                border: none;
+                padding: 12px 20px;
+                display: flex;
+                align-items: center;
+                color: #333;
+                text-decoration: none;
+                transition: all 0.2s ease;
+            }
+
+            #profile-menu-modal .list-group-item:hover {
+                background-color: #f8f9fa;
+                color: #333;
+                text-decoration: none;
+            }
+
+            #profile-menu-modal .list-group-item.text-danger:hover {
+                background-color: #f8d7da;
+                color: #721c24;
+            }
+
+            #profile-menu-modal .material-icons {
+                font-size: 18px;
+                margin-right: 12px;
+            }
+
+            /* Mobile responsive for profile modal */
+            @media (max-width: 576px) {
+                #profile-menu-modal .modal-dialog {
+                    margin: 1rem;
+                    max-width: calc(100% - 2rem);
+                    position: relative !important;
+                    bottom: auto !important;
+                    left: auto !important;
+                    width: auto !important;
+                }
+            }
+
+            /* Tablet mode */
+            @media (min-width: 577px) and (max-width: 991px) {
+                #profile-menu-modal .modal-dialog {
+                    position: relative !important;
+                    bottom: auto !important;
+                    left: auto !important;
+                    width: auto !important;
+                    margin: 1.75rem auto;
+                    max-width: 300px;
+                }
+            }
+        }
+
+        /* Extra mobile override for very small devices */
+        @media (max-width: 480px) {
+            .admin-panel #content,
+            .admin-context #content,
+            .admin-panel .app-content,
+            .admin-context .app-content,
+            body.admin-panel #content,
+            body.admin-context #content,
+            body.admin-panel .app-content,
+            body.admin-context .app-content {
+                padding-top: 10px !important; /* FORCE override semua padding dari CSS external */
+            }
+
+            /* Keep app-body padding minimal */
+            .admin-panel .app-body,
+            .admin-context .app-body,
+            body.admin-panel .app-body,
+            body.admin-context .app-body,
+            .mobile-header-responsive + .app-body,
+            .app-content:has(.mobile-header-responsive) .app-body {
+                padding-top: 20px !important; /* Consistent 20px */
+            }
+
+            .admin-panel .main-content,
+            .admin-context .main-content {
+                padding: 2px !important;
+                padding-top: 0 !important;
+            }
+        }
+
+        /* Desktop mode - hide mobile header, show navbar */
+        @media (min-width: 992px) {
+            /* Hide mobile header on desktop */
+            .admin-panel .mobile-header-responsive,
+            .admin-context .mobile-header-responsive {
+                display: none !important;
+            }
+
+            /* Show navbar on desktop */
+            .admin-panel .navbar,
+            .admin-context .navbar {
+                display: flex !important;
+                position: relative !important;
+                z-index: 1050 !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+
+            /* No padding needed on desktop */
+            .admin-panel #content,
+            .admin-context #content {
+                padding-top: 0 !important;
+            }
+
+            /* Desktop profile modal positioning - like dropdown */
+            #profile-menu-modal .modal-dialog {
+                position: fixed;
+                bottom: 80px; /* Position above the profile button */
+                left: 20px; /* Align with sidebar */
+                margin: 0;
+                max-width: 280px;
+                width: 280px;
+            }
+
+            #profile-menu-modal.fade .modal-dialog {
+                transform: translateY(20px);
+                transition: transform 0.3s ease-out;
+            }
+
+            #profile-menu-modal.show .modal-dialog {
+                transform: translateY(0);
+            }
+
+            /* Remove backdrop on desktop for dropdown-like experience */
+            #profile-menu-modal .modal-backdrop {
+                display: none;
+            }
+
+            /* Style modal content for dropdown-like appearance */
+            #profile-menu-modal .modal-content {
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                border-radius: 6px;
+                box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+            }
+
+            #profile-menu-modal .modal-header {
+                background-color: #f8f9fa;
+                border-bottom: 1px solid #dee2e6;
+                padding: 10px 15px;
+                border-radius: 6px 6px 0 0;
+            }
+
+            #profile-menu-modal .modal-title {
+                font-size: 14px;
+                font-weight: 600;
+                color: #495057;
+            }
+
+            #profile-menu-modal .close {
+                font-size: 18px;
+                opacity: 0.6;
+            }
+
+            #profile-menu-modal .close:hover {
+                opacity: 0.8;
+            }
+        }
+
+        /* Override specific breakpoints from responsif-tabel.css */
+        @media (max-width: 480px) {
+            .admin-panel .app-body,
+            .admin-context .app-body,
+            body.admin-panel .app-body,
+            body.admin-context .app-body,
+            .mobile-header-responsive + .app-body,
+            .app-content:has(.mobile-header-responsive) .app-body {
+                padding-top: 20px !important;
+                margin-top: 0 !important;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .admin-panel .app-body,
+            .admin-context .app-body,
+            body.admin-panel .app-body,
+            body.admin-context .app-body,
+            .mobile-header-responsive + .app-body,
+            .app-content:has(.mobile-header-responsive) .app-body {
+                padding-top: 20px !important;
+                margin-top: 0 !important;
+            }
+        }
+
+        /* Tablet portrait override */
+        @media (max-width: 991px) and (min-width: 768px) {
+            .admin-panel .app-body,
+            .admin-context .app-body,
+            body.admin-panel .app-body,
+            body.admin-context .app-body,
+            .mobile-header-responsive + .app-body,
+            .app-content:has(.mobile-header-responsive) .app-body {
+                padding-top: 20px !important;
+                margin-top: 0 !important;
+            }
+        }

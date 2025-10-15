@@ -1,0 +1,263 @@
+<!-- Artist Card Component -->
+<div class="artist-card">
+    <div class="artist-image">
+        <img src="https://via.placeholder.com/300x200" alt="Artist Name" class="img-fluid">
+        <div class="artist-overlay">
+            <div class="artist-actions">
+                <button class="btn btn-icon" data-bs-toggle="tooltip" title="Add to Favorites">
+                    <i class="material-icons">favorite_border</i>
+                </button>
+                <button class="btn btn-icon" data-bs-toggle="tooltip" title="Share">
+                    <i class="material-icons">share</i>
+                </button>
+            </div>
+        </div>
+        <div class="artist-badge">
+            <span class="badge bg-success">Available</span>
+        </div>
+    </div>
+    
+    <div class="artist-info">
+        <div class="artist-header">
+            <h5 class="artist-name">Artist Name</h5>
+            <div class="artist-rating">
+                <div class="stars">
+                    <i class="material-icons">star</i>
+                    <i class="material-icons">star</i>
+                    <i class="material-icons">star</i>
+                    <i class="material-icons">star</i>
+                    <i class="material-icons">star_half</i>
+                </div>
+                <span class="rating-text">(4.5)</span>
+            </div>
+        </div>
+        
+        <p class="artist-description">
+            Professional acoustic duo specializing in wedding ceremonies and intimate events.
+        </p>
+        
+        <div class="artist-meta">
+            <div class="meta-item">
+                <i class="material-icons">location_on</i>
+                <span>Amsterdam, Netherlands</span>
+            </div>
+            <div class="meta-item">
+                <i class="material-icons">music_note</i>
+                <span>Acoustic, Pop, Classic Rock</span>
+            </div>
+            <div class="meta-item">
+                <i class="material-icons">group</i>
+                <span>2 members</span>
+            </div>
+        </div>
+        
+        <div class="artist-packages">
+            <h6>Available Packages</h6>
+            <div class="package-list">
+                <div class="package-item">
+                    <span class="package-name">Ceremony Package</span>
+                    <span class="package-price">€450</span>
+                </div>
+                <div class="package-item">
+                    <span class="package-name">Reception Package</span>
+                    <span class="package-price">€750</span>
+                </div>
+                <div class="package-item">
+                    <span class="package-name">Full Day Package</span>
+                    <span class="package-price">€1,200</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="artist-actions-bottom">
+            <button class="btn btn-outline-primary btn-sm" onclick="viewArtistProfile()">
+                <i class="material-icons me-1">visibility</i>View Profile
+            </button>
+            <button class="btn btn-primary btn-sm" onclick="bookArtist()">
+                <i class="material-icons me-1">event</i>Send Request
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Artist Profile Modal -->
+<div class="modal fade" id="artistProfileModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Artist Profile</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="artist-profile-header">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="https://via.placeholder.com/300x300" alt="Artist" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>The Acoustic Duo</h3>
+                            <div class="artist-rating mb-2">
+                                <div class="stars">
+                                    <i class="material-icons">star</i>
+                                    <i class="material-icons">star</i>
+                                    <i class="material-icons">star</i>
+                                    <i class="material-icons">star</i>
+                                    <i class="material-icons">star_half</i>
+                                </div>
+                                <span class="rating-text">(4.5 - 127 reviews)</span>
+                            </div>
+                            <p class="lead">Professional acoustic duo with 8+ years of experience in wedding and corporate events.</p>
+                            
+                            <div class="artist-quick-info">
+                                <div class="info-item">
+                                    <strong>Location:</strong> Amsterdam, Netherlands
+                                </div>
+                                <div class="info-item">
+                                    <strong>Genres:</strong> Acoustic, Pop, Classic Rock, Jazz
+                                </div>
+                                <div class="info-item">
+                                    <strong>Experience:</strong> 8+ years
+                                </div>
+                                <div class="info-item">
+                                    <strong>Events Performed:</strong> 200+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="artist-profile-content mt-4">
+                    <nav>
+                        <div class="nav nav-tabs" id="profile-tab">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#about">About</button>
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#packages">Packages</button>
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#media">Media</button>
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#reviews">Reviews</button>
+                        </div>
+                    </nav>
+                    
+                    <div class="tab-content mt-3">
+                        <div class="tab-pane fade show active" id="about">
+                            <h5>About The Acoustic Duo</h5>
+                            <p>We are a professional acoustic duo based in Amsterdam, specializing in creating memorable musical experiences for weddings, corporate events, and private celebrations. Our repertoire includes contemporary hits, classic covers, and traditional wedding songs.</p>
+                            
+                            <h6>Equipment Included</h6>
+                            <ul>
+                                <li>Professional sound system</li>
+                                <li>Wireless microphones</li>
+                                <li>Acoustic guitars</li>
+                                <li>Backup equipment</li>
+                            </ul>
+                            
+                            <h6>Travel Information</h6>
+                            <p>We travel throughout the Netherlands. Travel fees may apply for locations outside Amsterdam area.</p>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="packages">
+                            <div class="package-details">
+                                <div class="package-card">
+                                    <h5>Ceremony Package - €450</h5>
+                                    <p>Perfect for wedding ceremonies and intimate gatherings</p>
+                                    <ul>
+                                        <li>1.5 hours of performance</li>
+                                        <li>Processional and recessional music</li>
+                                        <li>Song requests welcome</li>
+                                        <li>Sound equipment included</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="package-card">
+                                    <h5>Reception Package - €750</h5>
+                                    <p>Ideal for cocktail hours and receptions</p>
+                                    <ul>
+                                        <li>3 hours of performance</li>
+                                        <li>Mix of background and featured music</li>
+                                        <li>Extensive song list</li>
+                                        <li>MC services available</li>
+                                        <li>Sound equipment included</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="package-card">
+                                    <h5>Full Day Package - €1,200</h5>
+                                    <p>Complete musical coverage for your special day</p>
+                                    <ul>
+                                        <li>6+ hours of performance</li>
+                                        <li>Ceremony and reception music</li>
+                                        <li>Special song learning (2 songs)</li>
+                                        <li>MC and announcement services</li>
+                                        <li>Premium sound equipment</li>
+                                        <li>Setup and breakdown included</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="media">
+                            <div class="media-gallery">
+                                <h5>Photos</h5>
+                                <div class="row g-2 mb-4">
+                                    <div class="col-md-4">
+                                        <img src="https://via.placeholder.com/200x150" class="img-fluid rounded">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="https://via.placeholder.com/200x150" class="img-fluid rounded">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="https://via.placeholder.com/200x150" class="img-fluid rounded">
+                                    </div>
+                                </div>
+                                
+                                <h5>Video</h5>
+                                <div class="video-container">
+                                    <video controls class="img-fluid rounded">
+                                        <source src="#" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="reviews">
+                            <div class="reviews-section">
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <strong>Sarah & Mike</strong>
+                                        <div class="review-rating">
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                        </div>
+                                    </div>
+                                    <p>"Absolutely amazing! They made our wedding ceremony so special. Professional, talented, and wonderful to work with."</p>
+                                    <small class="text-muted">Wedding - June 2024</small>
+                                </div>
+                                
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <strong>Corporate Event Team</strong>
+                                        <div class="review-rating">
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star_border</i>
+                                        </div>
+                                    </div>
+                                    <p>"Great entertainment for our company retreat. They read the room perfectly and kept everyone engaged."</p>
+                                    <small class="text-muted">Corporate Event - May 2024</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="bookArtist()">Book Now</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,398 @@
+.Card {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.Gap-bottom {
+    margin-bottom: 20px;
+}
+
+.gap {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.paginate {
+  display: flex;
+  justify-content: end;
+  margin-right: 10px;
+  /* overflow-x: auto; */
+  padding-bottom: 10px;
+}
+
+.Date {
+    overflow-y: scroll;
+}
+
+.button-gap {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-list {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 0; /* 30px vertical gap, 0 horizontal gap */
+}
+
+.package-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: visible; /* perbaikan: agar dropdown bisa tampil */
+    transition: box-shadow 0.2s;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.package-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.package-card-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.package-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.package-card-body {
+    padding: 16px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.package-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.package-card-desc {
+    font-size: 0.98rem;
+    color: #555;
+    margin-bottom: 12px;
+    min-height: 48px;
+}
+
+.package-card-harga {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2d7a2d;
+    margin-top: auto;
+}
+
+.search-bar {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 20px 20px 10px 20px;
+    margin-bottom: 30px;
+}
+
+.detail-package-main {
+    display: flex;
+    gap: 48px;
+    max-width: 1500px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+    padding: 40px 40px 32px 40px;
+    align-items: flex-start;
+}
+.detail-package-img-col {
+    flex: 2 1 0;
+    max-width: 700px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.detail-package-img {
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.detail-package-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.detail-package-info-col {
+    flex: 1 1 0;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.detail-package-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #222;
+    line-height: 1.1;
+}
+.detail-package-artist {
+    font-size: 1.25rem;
+    color: #555;
+    margin-bottom: 18px;
+    font-weight: 500;
+}
+.detail-package-tanggal {
+    margin-bottom: 18px;
+}
+.detail-package-tanggal-label {
+    font-weight: 600;
+    margin-right: 8px;
+}
+.detail-package-tanggal-list {
+    margin: 0;
+    padding-left: 18px;
+    color: #444;
+}
+.detail-package-desc {
+    font-size: 1.13rem;
+    color: #444;
+    margin-bottom: 24px;
+    white-space: pre-line;
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 16px 18px;
+}
+.detail-package-harga {
+    font-size: 1.35rem;
+    font-weight: bold;
+    color: #2d7a2d;
+    margin-bottom: 28px;
+}
+.detail-package-checkout {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+.btn-checkout {
+    background: #2d7a2d;
+    color: #fff;
+    font-weight: 600;
+    padding: 14px 48px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.18rem;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(45,122,45,0.08);
+}
+.btn-checkout:hover {
+    background: #256a25;
+    color: #fff;
+}
+@media (max-width: 1100px) {
+    .detail-package-main { flex-direction: column; padding: 20px 10px; gap: 24px; }
+    .detail-package-img-col, .detail-package-info-col { max-width: 100%; flex: 1 1 100%; }
+    .detail-package-img { max-width: 100%; height: 220px; }
+}
+
+.dropdown-menu {
+    /* Pastikan dropdown muncul di atas konten tabel dan tidak tertutup border */
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    top: 100% !important;
+    bottom: auto !important;
+    transform: translateX(-50%) !important;
+    min-width: 140px;
+    z-index: 2000; /* lebih tinggi dari tabel */
+    box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+    border-radius: 10px;
+    margin-top: 6px;
+    margin-bottom: 0;
+    will-change: transform;
+    background: #fff;
+    /* Tambahan agar tidak tertutup border tabel */
+    border: 1px solid #e5e5e5;
+    overflow: visible;
+}
+
+.dropup .dropdown-menu {
+    top: auto !important;
+    bottom: 100% !important;
+    margin-bottom: 6px;
+    margin-top: 0;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+}
+
+/* Pastikan parent tabel tidak membatasi overflow */
+.table,
+.table-bordered,
+.table-responsive {
+    overflow: visible !important;
+}
+
+/* Untuk memastikan dropdown tidak keluar layar pada mobile */
+@media (max-width: 600px) {
+    .dropdown-menu {
+        left: 0 !important;
+        right: 0 !important;
+        transform: none !important;
+        min-width: 120px;
+        bottom: 100% !important;
+        top: auto !important;
+    }
+}
+
+#selected-dates-badge .badge {
+    font-size: 1em;
+    padding: 0.5em 1em;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 16px;
+}
+#selected-dates-badge .badge span {
+    margin-left: 8px;
+    color: #fff;
+    background: #d00;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Sembunyikan value pada input flatpickr, tetap tampilkan input sebagai trigger */
+#available_dates_input {
+    color: transparent !important;
+    text-shadow: 0 0 0 #aaa;
+    caret-color: transparent;
+    margin-bottom: 10px;
+}
+#available_dates_input:focus {
+    color: transparent !important;
+    text-shadow: 0 0 0 #aaa;
+    caret-color: transparent;
+}
+#available_dates_input::placeholder {
+    color: #aaa;
+    opacity: 1;
+}
+#selected-dates-badge {
+    margin-bottom: 10px;
+    margin-top: 4px;
+}
+.Gap-bottom .input-group {
+    margin-bottom: 12px !important;
+}
+.Gap-bottom small.text-muted {
+    margin-top: 8px;
+    display: block;
+}
+
+ /* .modern-date-input {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 2px 8px rgba(22,163,74,0.07);
+        border: 1px solid #d1fae5;
+        transition: box-shadow 0.2s, border-color 0.2s;
+        padding-right: 0;
+    } */
+    /* .modern-date-input:focus-within {
+        box-shadow: 0 4px 16px rgba(22,163,74,0.13);
+        border-color: #6ee7b7;
+    }
+    .modern-date-icon {
+        background: #fff !important;
+        border: none !important;
+    } */
+    .modern-date-field {
+        border-radius: 8px 8px 8px 8px !important;
+        background: #f8f9fa;
+        border: none;
+        box-shadow: none;
+        font-weight: 500;
+        color: #166534;
+        max-width: 260px;
+    }
+    /* .modern-date-field:focus {
+        background: #fff !important;
+        box-shadow: none;
+        border: none;
+        outline: none;
+    } */
+
+.form-checkout-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    min-height: 56px;
+}
+.form-checkout-row .form-checkout-input {
+    padding: 8px 16px 8px 0;
+}
+.form-checkout-row .form-checkout-btn {
+    min-width: 180px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-checkout-btn button,
+.form-checkout-btn .badge {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 1rem;
+}
+@media (max-width: 600px) {
+    .form-checkout-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .form-checkout-row .form-checkout-input,
+    .form-checkout-row .form-checkout-btn {
+        padding: 0;
+        min-width: 0;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.form-checkout-row { gap: 1rem; }
+    @media (max-width: 600px) {
+    .form-checkout-row { flex-direction: column; align-items: stretch; gap: 0.5rem; }
+    .form-checkout-btn { width: 100%; }
+}

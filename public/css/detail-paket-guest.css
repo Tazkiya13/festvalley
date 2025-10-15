@@ -1,0 +1,496 @@
+ /* Pinterest-style Masonry Grid */
+        .pinterest-grid-detail {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-auto-rows: 8px;
+            grid-gap: 16px;
+            padding: 0 16px;
+            margin-top: 20px;
+        }
+
+        .pinterest-card-detail {
+            break-inside: avoid;
+            background-color: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+        }
+
+        .pinterest-card-detail .pinterest-card-content {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+        }
+
+        .pinterest-card-detail:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .pinterest-card-detail .item-media {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .pinterest-card-detail .pinterest-image-wrap {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        .pinterest-card-detail .item-media-content,
+        .pinterest-card-detail .pinterest-image {
+            width: 100%;
+            height: 100%;
+            display: block;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-decoration: none;
+        }
+
+        .pinterest-card-detail:hover .item-media-content,
+        .pinterest-card-detail:hover .pinterest-image {
+            transform: scale(1.02);
+        }
+
+        .pinterest-card-detail .item-info,
+        .pinterest-card-detail .pinterest-card-footer {
+            padding: 12px 16px 16px;
+            background: #fff;
+            border-radius: 0 0 16px 16px;
+        }
+
+        .pinterest-card-detail .item-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .pinterest-card-detail .item-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .pinterest-card-detail .item-title a:hover {
+            color: #667eea;
+        }
+
+        .pinterest-card-detail .item-price {
+            font-size: 0.85rem;
+            color: #667eea;
+            font-weight: 600;
+            background: rgba(102, 126, 234, 0.1);
+            padding: 4px 8px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* Pinterest-style Main Detail Card */
+        .pinterest-main-container {
+            display: flex;
+            /* flex-direction: row; */
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 2200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        .pinterest-main-card {
+            display: flex;
+            flex-direction: row;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            max-width: 980px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .pinterest-main-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+        }
+
+        .pinterest-main-image-container {
+            position: relative;
+            overflow: hidden;
+            width: 50%;
+            flex-shrink: 0;
+        }
+
+        .pinterest-main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .pinterest-main-card:hover .pinterest-main-image {
+            transform: scale(1.02);
+        }
+
+        .pinterest-main-content {
+            padding: 32px 28px 28px;
+        }
+
+        .pinterest-main-header {
+            margin-bottom: 24px;
+        }
+
+        .pinterest-main-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin: 0 0 16px 0;
+        }
+
+        .pinterest-artist-section {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .pinterest-artist-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .pinterest-artist-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .pinterest-artist-badge {
+            font-size: 0.85rem;
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+            padding: 4px 12px;
+            border-radius: 12px;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        .pinterest-description {
+            margin-bottom: 24px;
+        }
+
+        .pinterest-description p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #444;
+            margin: 0;
+        }
+
+        .pinterest-main-content {
+            padding: 32px 28px 28px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .pinterest-main-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin: 0 0 16px 0;
+        }
+
+        .pinterest-price-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .pinterest-availability-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+        }
+
+        .pinterest-availability-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .pinterest-availability-title i {
+            margin-right: 8px;
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+
+        .pinterest-date-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e1e5e9;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+            cursor: pointer;
+        }
+
+        .pinterest-date-input:focus {
+            border-color: #667eea;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .pinterest-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .pinterest-btn-book {
+            flex: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            border-radius: 16px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pinterest-btn-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+        }
+
+        .pinterest-btn-save {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 14px 18px;
+            border-radius: 16px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 60px;
+        }
+
+        .pinterest-btn-save:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* From section styling */
+        .pinterest-from-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 0;
+        }
+
+        .pinterest-from-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .pinterest-from-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 0 0 8px 0;
+        }
+
+        .pinterest-from-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Browser-style CSS Variables and Header */
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --text-primary: #2d3436;
+            --text-secondary: #636e72;
+            --text-muted: #b2bec3;
+            --white: #ffffff;
+            --light-bg: #f8f9fa;
+            --border-color: #e9ecef;
+            --shadow: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-hover: 0 4px 20px rgba(0,0,0,0.12);
+            --border-radius: 12px;
+        }
+
+        /* Clean Header Navigation - Same as Browser */
+        .minimal-header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-minimal {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-minimal a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-minimal a:hover,
+        .nav-minimal a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-minimal a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary-color);
+            border-radius: 1px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .pinterest-grid-detail {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                grid-gap: 12px;
+                padding: 0 8px;
+                grid-auto-rows: 6px;
+            }
+
+            .pinterest-main-container {
+                padding: 0 16px 40px;
+            }
+
+            .pinterest-main-card {
+                max-width: 100%;
+                border-radius: 20px;
+                flex-direction: column;
+            }
+
+            .pinterest-main-image-container {
+                width: 100%;
+                height: 300px;
+            }
+
+            .pinterest-main-content {
+                padding: 24px 20px 20px;
+                width: 100%;
+            }
+
+            .pinterest-main-title {
+                font-size: 1.6rem;
+            }
+
+            .pinterest-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .pinterest-from-section {
+                padding: 30px 16px 0;
+            }
+
+            .pinterest-from-title {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pinterest-grid-detail {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                grid-gap: 10px;
+                padding: 0 6px;
+                grid-auto-rows: 5px;
+            }
+
+            .pinterest-card-detail .item-info {
+                padding: 8px 12px 12px;
+            }
+
+            .pinterest-main-container {
+                padding: 0 12px 30px;
+            }
+
+            .pinterest-main-image-container {
+                height: 250px;
+            }
+
+            .pinterest-main-content {
+                padding: 20px 16px 16px;
+            }
+
+            .pinterest-main-title {
+                font-size: 1.4rem;
+            }
+
+            .pinterest-from-title {
+                font-size: 1.4rem;
+            }
+
+            .pinterest-from-subtitle {
+                font-size: 1rem;
+            }
+        }

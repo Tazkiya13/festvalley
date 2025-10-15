@@ -1,0 +1,806 @@
+/* FestValley - Components Stylesheet */
+
+/* =============================================================================
+   Form Components
+   ============================================================================= */
+
+/* Multi-step Form Component */
+.booking-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.form-progress {
+  margin-bottom: 3rem;
+}
+
+.progress-bar-custom {
+  height: 8px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.form-step-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--border-color);
+}
+
+.form-field-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-field-group label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-field-group .form-text {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* File Upload Component */
+.file-upload-area {
+  border: 2px dashed var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  text-align: center;
+  transition: var(--transition);
+  cursor: pointer;
+  background: #fafafa;
+}
+
+.file-upload-area:hover {
+  border-color: var(--primary-color);
+  background: rgba(102, 126, 234, 0.05);
+}
+
+.file-upload-area.dragover {
+  border-color: var(--primary-color);
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.file-upload-icon {
+  font-size: 3rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.file-upload-text {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.file-upload-hint {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* File Preview Component */
+.file-preview-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.file-preview-item {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background: white;
+}
+
+.file-preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.file-preview-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.file-preview-remove {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  background: var(--danger-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-preview-remove:hover {
+  background: #c82333;
+}
+
+/* =============================================================================
+   Package & Artist Cards
+   ============================================================================= */
+
+.package-card {
+  position: relative;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  background: white;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.package-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.package-card-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.package-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.package-card:hover .package-card-image img {
+  transform: scale(1.05);
+}
+
+.package-card-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  backdrop-filter: blur(10px);
+}
+
+.package-card-content {
+  padding: 1.5rem;
+}
+
+.package-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.package-card-artist {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.package-card-description {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.package-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.package-card-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.package-card-rating {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.package-card-rating .stars {
+  color: #ffc107;
+  margin-right: 0.5rem;
+}
+
+/* Artist Profile Card */
+.artist-profile-card {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.artist-profile-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.artist-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin: 0 auto 1rem;
+  object-fit: cover;
+}
+
+.artist-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.artist-genre {
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+.artist-profile-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.artist-stat {
+  text-align: center;
+}
+
+.artist-stat-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: block;
+}
+
+.artist-stat-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* =============================================================================
+   Dashboard Components
+   ============================================================================= */
+
+.dashboard-card {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.dashboard-card-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dashboard-card-body {
+  padding: 2rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.stat-card-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.stat-card-icon i {
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+.stat-card-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.stat-card-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.stat-card-change {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.stat-card-change.positive {
+  color: var(--accent-color);
+}
+
+.stat-card-change.negative {
+  color: var(--danger-color);
+}
+
+/* =============================================================================
+   Booking Timeline
+   ============================================================================= */
+
+.booking-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.booking-timeline::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.75rem;
+  top: 1.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: 3px solid white;
+  box-shadow: 0 0 0 3px var(--border-color);
+}
+
+.timeline-item.completed::before {
+  background: var(--accent-color);
+}
+
+.timeline-item.current::before {
+  background: var(--warning-color);
+  animation: pulse 2s infinite;
+}
+
+.timeline-date {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-description {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 193, 7, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
+  }
+}
+
+/* =============================================================================
+   Filter & Search Components
+   ============================================================================= */
+
+.filter-sidebar {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.filter-group {
+  margin-bottom: 2rem;
+}
+
+.filter-group:last-child {
+  margin-bottom: 0;
+}
+
+.filter-group-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.filter-option input {
+  margin-right: 0.75rem;
+}
+
+.filter-option label {
+  margin: 0;
+  cursor: pointer;
+  flex: 1;
+}
+
+.filter-option-count {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.price-range-slider {
+  margin: 1rem 0;
+}
+
+.price-range-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+/* =============================================================================
+   Alert & Notification Components
+   ============================================================================= */
+
+.alert-custom {
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid;
+}
+
+.alert-custom.alert-success {
+  background: rgba(40, 167, 69, 0.1);
+  border-left-color: var(--accent-color);
+  color: #155724;
+}
+
+.alert-custom.alert-warning {
+  background: rgba(255, 193, 7, 0.1);
+  border-left-color: var(--warning-color);
+  color: #856404;
+}
+
+.alert-custom.alert-danger {
+  background: rgba(220, 53, 69, 0.1);
+  border-left-color: var(--danger-color);
+  color: #721c24;
+}
+
+.alert-custom.alert-info {
+  background: rgba(23, 162, 184, 0.1);
+  border-left-color: var(--info-color);
+  color: #0c5460;
+}
+
+.notification-toast {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  padding: 1rem 1.5rem;
+  min-width: 300px;
+  z-index: 1055;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.notification-toast.show {
+  transform: translateX(0);
+}
+
+.notification-toast.success {
+  border-left: 4px solid var(--accent-color);
+}
+
+.notification-toast.error {
+  border-left: 4px solid var(--danger-color);
+}
+
+.notification-toast.warning {
+  border-left: 4px solid var(--warning-color);
+}
+
+.notification-toast.info {
+  border-left: 4px solid var(--info-color);
+}
+
+/* =============================================================================
+   Payment & Invoice Components
+   ============================================================================= */
+
+.invoice-container {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.invoice-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 2rem;
+}
+
+.invoice-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.invoice-date {
+  opacity: 0.9;
+}
+
+.invoice-body {
+  padding: 2rem;
+}
+
+.invoice-section {
+  margin-bottom: 2rem;
+}
+
+.invoice-section:last-child {
+  margin-bottom: 0;
+}
+
+.invoice-section-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.invoice-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.invoice-detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.invoice-detail-item:last-child {
+  border-bottom: none;
+}
+
+.invoice-detail-label {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.invoice-detail-value {
+  font-weight: 600;
+}
+
+.invoice-total {
+  background: var(--bg-light);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  margin-top: 1rem;
+}
+
+.invoice-total-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.invoice-total-item:last-child {
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  padding-top: 0.5rem;
+  border-top: 2px solid var(--border-color);
+}
+
+.payment-instructions {
+  background: #f8f9fa;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.payment-instructions h6 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.bank-details {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.bank-detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.bank-detail-item:last-child {
+  margin-bottom: 0;
+}
+
+/* =============================================================================
+   Media Queries for Components
+   ============================================================================= */
+
+@media (max-width: 768px) {
+  .package-card-content {
+    padding: 1rem;
+  }
+  
+  .package-card-image {
+    height: 200px;
+  }
+  
+  .artist-profile-header {
+    padding: 1.5rem;
+  }
+  
+  .artist-avatar {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .invoice-details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-sidebar {
+    padding: 1.5rem;
+  }
+  
+  .booking-timeline {
+    padding-left: 1.5rem;
+  }
+  
+  .timeline-item {
+    padding: 1rem;
+  }
+  
+  .notification-toast {
+    right: 1rem;
+    left: 1rem;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .package-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .dashboard-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .invoice-header {
+    padding: 1.5rem;
+  }
+  
+  .invoice-body {
+    padding: 1.5rem;
+  }
+  
+  .file-preview-container {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+  
+  .file-preview-item {
+    width: 80px;
+    height: 80px;
+  }
+}

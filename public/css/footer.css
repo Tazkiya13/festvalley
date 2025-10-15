@@ -1,0 +1,744 @@
+.footer-content-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-height: 190px;
+}
+
+.footer-content {
+    /* display: flex; */
+    flex-wrap: wrap;
+    width: 700px;
+    /* flex-direction: row; */
+}
+
+.email-footer {
+    display: flex;
+    flex-direction: row;
+    max-width: 900px;
+}
+
+.phone-footer {
+    display: flex;
+    flex-direction: row;
+    max-width: 900px;
+}
+
+.address-footer {
+    display: flex;
+    flex-direction: row;
+    max-width: 900px;
+}
+
+.footer-icon {
+    display: flex;
+    /* align-items: center; */
+    margin-right: 10px;
+    padding: 20px;
+}
+
+
+/* Icon Row Container */
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+/* Basic Icon Styling */
+.icon-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #333; /* Warna ikon lebih gelap */
+  background: rgba(0, 0, 0, 0.1); /* Background lebih gelap */
+  transition: all 0.3s ease;
+  text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.icon-row-spacious {
+  gap: 20px;
+  padding: 20px 10px;
+}
+
+/* Hover Effects */
+.icon-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: #fff !important; /* Saat hover, atur warna teks menjadi putih */
+}
+
+/* Individual Brand Colors on Hover */
+.icon-facebook:hover {
+  background: #3b5998;
+}
+
+.icon-twitter:hover {
+  background: #1da1f2;
+}
+
+.icon-instagram:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.icon-youtube:hover {
+  background: #ff0000;
+}
+
+.icon-linkedin:hover {
+  background: #0077b5;
+}
+
+.icon-pinterest:hover {
+  background: #e60023;
+}
+
+.icon-whatsapp:hover {
+  background: #25d366;
+}
+
+.icon-tiktok:hover {
+  background: #000000;
+}
+
+/* Icon Size Variations */
+.icon-sm {
+  width: 32px;
+  height: 32px;
+  font-size: 0.8rem;
+}
+
+.icon-md {
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+}
+
+.icon-lg {
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+}
+
+/* Icon Row Alignments */
+.icon-row-start {
+  justify-content: flex-start;
+}
+
+.icon-row-center {
+  justify-content: center;
+}
+
+.icon-row-end {
+  justify-content: flex-end;
+}
+
+/* Spacing Variations */
+.icon-row-tight {
+  gap: 8px;
+}
+
+.icon-row-wide {
+  gap: 25px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .icon-row {
+    gap: 10px;
+  }
+
+  .icon-lg {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-row {
+    gap: 8px;
+  }
+
+  .icon-md, .icon-lg {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}
+
+/* =======================================
+   RESPONSIVE FOOTER STYLES FOR MOBILE
+   ======================================= */
+
+/* Tablet Portrait and small desktop (768px - 991px) */
+@media (max-width: 991px) {
+  .footer-content-title {
+    flex-direction: column;
+    align-items: center;
+    max-height: none;
+    gap: 20px;
+  }
+
+  .footer-content {
+    width: 100%;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .email-footer,
+  .phone-footer,
+  .address-footer {
+    justify-content: center;
+    max-width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.02);
+  }
+
+  .footer-icon {
+    padding: 15px;
+  }
+}
+
+/* Mobile Landscape and Tablet (664px - 767px) - Critical breakpoint */
+@media (max-width: 767px) {
+  .footer-content-title {
+    padding: 0 15px;
+    margin-bottom: 30px;
+  }
+
+  .footer-content {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .email-footer,
+  .phone-footer,
+  .address-footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+
+  .footer-icon {
+    align-self: center;
+    margin-right: 0;
+    margin-bottom: 8px;
+    padding: 10px;
+  }
+
+  .footer-icon i {
+    font-size: 1.5rem !important;
+  }
+
+  /* Ensure social icons don't collide with contact info */
+  .footer-social-section {
+    margin-top: 40px !important;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .footer-icon-row {
+    margin: 20px 0 !important;
+    gap: 12px !important;
+  }
+
+  .icon-item {
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 1.1rem !important;
+  }
+
+  /* Adjust subscribe section */
+  .footer .col-md-3.col-xs-6 {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding: 0 15px;
+  }
+
+  .footer .col-md-3.col-xs-6 form {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+/* Critical Mobile Breakpoint (around 664px) */
+@media (max-width: 664px) {
+  .footer {
+    padding: 30px 10px 20px 10px !important;
+  }
+
+  .footer-content-title {
+    flex-direction: column;
+    padding: 0 10px;
+    gap: 15px;
+  }
+
+  .footer-content {
+    width: 100%;
+    display: block; /* Change from grid to block for better stacking */
+  }
+
+  .email-footer,
+  .phone-footer,
+  .address-footer {
+    display: block !important;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 15px 10px;
+    text-align: center;
+    border-radius: 8px;
+    background: rgba(118, 75, 162, 0.05);
+  }
+
+  .footer-icon {
+    display: block !important;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    padding: 10px;
+    width: fit-content;
+  }
+
+  /* Ensure sufficient spacing between contact info and social icons */
+  .footer-social-section {
+    margin-top: 50px !important;
+    padding-top: 25px !important;
+    border-top: 2px solid rgba(118, 75, 162, 0.1) !important;
+    clear: both;
+  }
+
+  .footer-icon-row {
+    justify-content: center !important;
+    margin: 25px 0 !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .icon-item {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1rem !important;
+  }
+
+  /* Subscribe section adjustments */
+  .footer .col-md-3.col-xs-6 {
+    margin-top: 25px;
+    padding: 0 10px;
+  }
+
+  .footer .col-md-3.col-xs-6 h6 {
+    font-size: 0.9rem !important;
+  }
+
+  .footer .col-md-3.col-xs-6 p {
+    font-size: 0.85rem !important;
+    margin-bottom: 15px !important;
+  }
+
+  .footer .col-md-3.col-xs-6 .form-control {
+    font-size: 0.85rem !important;
+    padding: 8px 12px !important;
+  }
+
+  .footer .col-md-3.col-xs-6 .btn {
+    font-size: 0.8rem !important;
+    padding: 8px 16px !important;
+  }
+
+  /* Cookies and copyright adjustments */
+  .cookies-notice {
+    margin: 25px 0 15px 0 !important;
+    padding: 12px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .copyright {
+    margin-top: 15px !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .footer {
+    padding: 25px 8px 15px 8px !important;
+  }
+
+  .footer-content-title {
+    padding: 0 5px;
+    gap: 12px;
+  }
+
+  .email-footer,
+  .phone-footer,
+  .address-footer {
+    margin-bottom: 15px;
+    padding: 12px 8px;
+  }
+
+  .footer-icon {
+    padding: 8px;
+  }
+
+  .footer-icon i {
+    font-size: 1.3rem !important;
+  }
+
+  .footer-social-section {
+    margin-top: 40px !important;
+    padding-top: 20px !important;
+  }
+
+  .footer-icon-row {
+    gap: 8px !important;
+    margin: 20px 0 !important;
+  }
+
+  .icon-item {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .footer .col-md-3.col-xs-6 {
+    margin-top: 20px;
+    padding: 0 8px;
+  }
+
+  .footer .col-md-3.col-xs-6 h6 {
+    font-size: 0.85rem !important;
+  }
+
+  .footer .col-md-3.col-xs-6 p {
+    font-size: 0.8rem !important;
+  }
+
+  .cookies-notice {
+    margin: 20px 0 12px 0 !important;
+    padding: 10px !important;
+    font-size: 0.75rem !important;
+  }
+
+  .copyright {
+    font-size: 0.7rem !important;
+  }
+
+  /* Contact link and address text sizing */
+  .contact-link,
+  .address-line {
+    font-size: 0.8rem !important;
+  }
+
+  .footer h6.text-muted {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .footer {
+    padding: 20px 5px 12px 5px !important;
+  }
+
+  .email-footer,
+  .phone-footer,
+  .address-footer {
+    padding: 10px 5px;
+    margin-bottom: 12px;
+  }
+
+  .footer-icon {
+    padding: 6px;
+  }
+
+  .footer-social-section {
+    margin-top: 35px !important;
+    padding-top: 15px !important;
+  }
+
+  .footer-icon-row {
+    gap: 6px !important;
+  }
+
+  .icon-item {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .footer .col-md-3.col-xs-6 {
+    padding: 0 5px;
+  }
+
+  .footer .col-md-3.col-xs-6 .form-control {
+    font-size: 0.8rem !important;
+    padding: 6px 10px !important;
+  }
+
+  .footer .col-md-3.col-xs-6 .btn {
+    font-size: 0.75rem !important;
+    padding: 6px 12px !important;
+  }
+}
+
+/* Cookies Notice */
+.cookies-notice {
+  text-align: center;
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.cookies-notice p {
+  margin: 0;
+  color: #555;
+}
+
+.cookies-notice a {
+  color: #764ba2;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.cookies-notice a:hover {
+  color: #9c27b0;
+  text-decoration: underline;
+}
+
+/* Copyright */
+.copyright {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.copyright p {
+  margin: 0;
+}
+
+/* Make sure icons are centered - ONLY for footer */
+.footer .icon-row-center {
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Ensure footer context specificity */
+.white.dk .footer .icon-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 15px !important;
+  justify-content: center !important;
+  margin: 15px 0 !important;
+}
+
+.white.dk .footer .icon-row-center {
+  justify-content: center !important;
+}
+
+/* Prevent footer CSS from affecting other sections */
+.simple-process-section .icon-row-center,
+.hero-carousel .icon-row-center,
+.spotlight .icon-row-center {
+  justify-content: initial !important;
+  margin-left: initial !important;
+  margin-right: initial !important;
+}
+
+/* Footer specific icon row styling */
+.footer-icon-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 15px !important;
+  margin: 15px 0 !important;
+}
+
+.footer-icon-centered {
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Ensure footer social section doesn't interfere with other sections */
+.footer-social-section {
+  width: 100%;
+  text-align: center;
+}
+
+/* Override any conflicting styles specifically for footer */
+.footer .footer-icon-row {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.footer .footer-icon-centered {
+  justify-content: center !important;
+}
+
+/* Contact Information Styling - HTML5UP Forty Style */
+.contact-info-list, .address-info-list {
+  list-style: none !important;
+  padding: 0 !important;
+}
+
+.contact-item, .address-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin-bottom: 12px !important;
+  padding: 0 !important;
+  background: none !important;
+}
+
+.contact-item i, .address-item i {
+  color: #764ba2 !important;
+  width: 18px !important;
+  margin-right: 10px !important;
+  margin-top: 3px !important;
+  flex-shrink: 0 !important;
+}
+
+.contact-item span, .address-item span {
+  color: #666 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+  font-weight: 400 !important;
+}
+
+/* Hover effects for contact items */
+.contact-item:hover, .address-item:hover {
+  background: rgba(118, 75, 162, 0.05) !important;
+  padding: 5px 8px !important;
+  border-radius: 4px !important;
+  transition: all 0.3s ease !important;
+}
+
+.contact-item:hover i, .address-item:hover i {
+  color: #9c27b0 !important;
+}
+
+.contact-item:hover span, .address-item:hover span {
+  color: #333 !important;
+}
+
+/* Remove default nav styling */
+.contact-info-list .nav-item, .address-info-list .nav-item {
+  margin-bottom: 0 !important;
+}
+
+.contact-info-list .nav-link, .address-info-list .nav-link {
+  padding: 0 !important;
+  color: inherit !important;
+}
+
+/* Footer section headers styling */
+.footer h6.text-muted {
+  color: #333 !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 15px !important;
+}
+
+/* Brand title enhancement */
+.footer-title {
+  color: #000000 !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.5px !important;
+}
+
+/* Minimal Contact & Address Styling */
+.minimal-contact-item {
+  margin-bottom: 8px;
+}
+
+.contact-link {
+  color: #555 !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  transition: color 0.3s ease !important;
+  display: block !important;
+}
+
+.contact-link:hover {
+  color: #764ba2 !important;
+  text-decoration: none !important;
+}
+
+/* Minimal Address Styling */
+.minimal-address {
+  margin-bottom: 15px;
+}
+
+.address-line {
+  color: #555 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+  margin: 0 0 4px 0 !important;
+  font-weight: 400 !important;
+}
+
+.minimal-hours {
+  margin-top: 10px;
+}
+
+.hours-text {
+  color: #666 !important;
+  font-size: 0.85rem !important;
+  line-height: 1.3 !important;
+  margin: 0 !important;
+  font-style: italic !important;
+}
+
+/* Clean section headers */
+.footer .col-sm-3 h6 {
+  color: #333 !important;
+  font-weight: 600 !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 12px !important;
+  text-transform: uppercase !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-item, .address-item {
+    margin-bottom: 10px !important;
+  }
+
+  .contact-item span, .address-item span {
+    font-size: 0.85rem !important;
+  }
+
+  .contact-link, .address-line {
+    font-size: 0.85rem !important;
+  }
+
+  .hours-text {
+    font-size: 0.8rem !important;
+  }
+
+  .minimal-contact-item {
+    margin-bottom: 6px;
+  }
+}
